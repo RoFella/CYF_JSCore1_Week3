@@ -5,7 +5,15 @@
     Implement the function below, which will return a new array containing only article titles which will fit.
 */
 function potentialHeadlines(allArticleTitles) {
-    // TODO
+    let newArticle = []
+        for (let article of allArticleTitles) {
+            if (article.length <= 65) {
+                newArticle.unshift(article);
+         }
+            else {
+            }             
+        }
+    return newArticle; 
 }
 
 /*
@@ -14,8 +22,18 @@ function potentialHeadlines(allArticleTitles) {
     (you can assume words will always be seperated by a space)
 */
 function titleWithFewestWords(allArticleTitles) {
-    // TODO
+    let shortestArticle = []
+        for (let article of allArticleTitles) {
+            if (article.length <= 44) {
+                shortestArticle.unshift(article);
+         }
+            else {
+            }             
+        }
+    return shortestArticle; 
 }
+        
+
 
 /*
     The editor of the FT has realised that headlines which have numbers in them get more clicks!
@@ -23,15 +41,29 @@ function titleWithFewestWords(allArticleTitles) {
     (Hint: remember that you can also loop through the characters of a string if you need to)
 */
 function headlinesWithNumbers(allArticleTitles) {
-    // TODO
-}
+    let numberArticle = []
+    for (let article of allArticleTitles) {
+            if (article.includes(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)) {
+                numberArticle.unshift(article);
+         }
+            else {
+            }   
+        }           
+return numberArticle; 
+    }
 
 /*
     The Financial Times wants to understand what the average number of characters in an article title is.
     Implement the function below to return this number - rounded to the nearest integer.
 */
 function averageNumberOfCharacters(allArticleTitles) {
-    // TODO
+    let i = 0;
+    const numberOfArticles = allArticleTitles.length;
+    for (const article of allArticleTitles) {
+        i += article.length; 
+    }
+    const averageArticleLength = (i / numberOfArticles).toFixed(0);
+return averageArticleLength; 
 }
 
 
